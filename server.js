@@ -22,7 +22,7 @@ app.use(cookieParser());
 app.use(
     cors({
         // origin: [ORIGIN, 'http://localhost:5173'], // frontend link
-        origin: 'https://sync-chat-frontend-six.vercel.app',
+        origin: ORIGIN,
         credentials: true
     })
 );
