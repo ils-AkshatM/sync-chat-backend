@@ -21,8 +21,8 @@ app.use(express.json()); // to parse json body
 app.use(cookieParser());
 app.use(
     cors({
-        origin: [ORIGIN, 'http://localhost:5173'], // frontend link
-        // origin: '*',
+        // origin: [ORIGIN, 'http://localhost:5173'], // frontend link
+        origin: '*',
         methods: ['GET', 'PUT', 'POST', 'DELETE', 'PATCH'],
         credentials: true
     })
