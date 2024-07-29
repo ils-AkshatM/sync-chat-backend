@@ -13,7 +13,7 @@ import ChannelRoutes from './routes/ChannelRoutes.js';
 dontenv.config()
 
 const PORT = process.env.PORT || 5000;
-const ORIGIN = process.env.ORIGIN
+const ORIGIN = process.env.ORIGIN || "https://sync-chat-frontend-six.vercel.app";
 const app = express()
 
 // middleware 
@@ -22,14 +22,10 @@ app.use(cookieParser());
 app.use(
     cors({
         // origin: [ORIGIN, 'http://localhost:5173'], // frontend link
-        origin: '*',
-        methods: ['GET', 'PUT', 'POST', 'DELETE', 'PATCH'],
+        origin: 'https://sync-chat-frontend-six.vercel.app',
         credentials: true
     })
 );
-
-// console.log("ORIGIN from app = ", ORIGIN)
-
 
 const server = app.listen(PORT, () => {
     console.log(`Server Started on PORT ${PORT}`);
